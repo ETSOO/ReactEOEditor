@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    /* Visit https://aka.ms/tsconfig to read more about this file */
+    "target": "es2019",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./lib",
+    "strict": true,
+    "skipLibCheck": true,
+    "jsx": "react"
+  },
+  "include": ["src"]
+}

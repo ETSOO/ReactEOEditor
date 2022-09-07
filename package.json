@@ -1,0 +1,35 @@
+{
+  "name": "@etsoo/reacteditor",
+  "version": "1.0.1",
+  "description": "EOEditor React Implementation",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ETSOO/ReactEOEditor.git"
+  },
+  "keywords": [
+    "React",
+    "EOEditor",
+    "TypeScript",
+    "ETSOO",
+    "SmartERP",
+    "司友云平台",
+    "青岛亿速思维",
+    "上海亿商",
+    "亿速编辑器"
+  ],
+  "author": "ETSOO",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^18.0.18",
+    "react": "^18.2.0",
+    "typescript": "^4.8.2"
+  },
+  "dependencies": {
+    "@etsoo/editor": "^1.0.23"
+  }
+}
