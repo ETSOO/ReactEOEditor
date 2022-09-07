@@ -5,6 +5,8 @@
     "module": "commonjs",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "noEmit": false,
+    "declaration": true,
     "outDir": "./lib",
     "strict": true,
     "skipLibCheck": true,
