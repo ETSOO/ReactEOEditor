@@ -1,6 +1,6 @@
 {
   "name": "@etsoo/reacteditor",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "EOEditor React Implementation",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -25,11 +25,11 @@
   "author": "ETSOO",
   "license": "MIT",
   "devDependencies": {
-    "@types/react": "^18.0.18",
+    "@types/react": "^18.0.19",
     "react": "^18.2.0",
-    "typescript": "^4.8.2"
+    "typescript": "^4.8.3"
   },
   "dependencies": {
-    "@etsoo/editor": "^1.0.23"
+    "@etsoo/editor": "^1.0.27"
   }
 }
