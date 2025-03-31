@@ -1,6 +1,6 @@
 {
   "name": "@etsoo/reacteditor",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "EOEditor React Implementation",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -30,6 +30,6 @@
     "typescript": "^5.8.2"
   },
   "dependencies": {
-    "@etsoo/editor": "^1.0.47"
+    "@etsoo/editor": "^1.0.48"
   }
 }
