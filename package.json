@@ -1,11 +1,18 @@
 {
   "name": "@etsoo/reacteditor",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "description": "EOEditor React Implementation",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "lib/cjs/index.js",
+  "module": "lib/mjs/index.js",
+  "types": "lib/mjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/mjs/index.js",
+      "require": "./lib/cjs/index.js"
+    }
+  },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig.cjs.json"
   },
   "repository": {
     "type": "git",
@@ -30,6 +37,6 @@
     "typescript": "^5.8.2"
   },
   "dependencies": {
-    "@etsoo/editor": "^1.0.48"
+    "@etsoo/editor": "^1.0.49"
   }
 }

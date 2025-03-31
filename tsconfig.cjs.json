@@ -2,13 +2,13 @@
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
     "target": "ES2022",
-    "module": "ES2022",
-    "moduleResolution": "bundler",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": false,
-    "declaration": true,
-    "outDir": "./lib/mjs",
+    "declaration": false,
+    "outDir": "./lib/cjs",
     "strict": true,
     "skipLibCheck": true,
     "jsx": "react-jsx"
