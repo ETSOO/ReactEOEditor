@@ -7,7 +7,7 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": false,
-    "declaration": false,
+    "declaration": true,
     "outDir": "./lib/cjs",
     "strict": true,
     "skipLibCheck": true,

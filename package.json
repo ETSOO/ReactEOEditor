@@ -37,6 +37,6 @@
     "typescript": "^5.8.2"
   },
   "dependencies": {
-    "@etsoo/editor": "^1.0.50"
+    "@etsoo/editor": "^1.0.51"
   }
 }
