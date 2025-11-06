@@ -22,9 +22,11 @@ export type EOEditorExProps = React.DetailedHTMLProps<
 
 // Element extensions
 declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      "eo-editor": EOEditorExProps;
+  namespace React {
+    namespace JSX {
+      interface IntrinsicElements {
+        "eo-editor": EOEditorExProps;
+      }
     }
   }
 }

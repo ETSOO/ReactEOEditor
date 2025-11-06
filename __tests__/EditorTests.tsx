@@ -1,4 +1,4 @@
-import { act, render, screen } from "@testing-library/react";
+import { act, render } from "@testing-library/react";
 import { EOEditorElement, EOEditorEx } from "../src";
 import React from "react";
 
