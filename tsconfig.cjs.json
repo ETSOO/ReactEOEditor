@@ -8,6 +8,7 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": false,
     "declaration": true,
+    "rootDir": "./src",
     "outDir": "./lib/cjs",
     "strict": true,
     "skipLibCheck": true,
