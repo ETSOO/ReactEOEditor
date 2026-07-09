@@ -18,6 +18,11 @@ export type EOEditorExProps = React.DetailedHTMLProps<
      * On backup callback
      */
     onBackup?: (content: string) => void;
+
+    /**
+     * On editor ready callback
+     */
+    onEditorReady?: () => void;
   };
 
 // Element extensions
@@ -40,7 +45,7 @@ new EOEditor();
 export const EOEditorEx = React.forwardRef<EOEditorElement, EOEditorExProps>(
   (props, ref) => {
     // Destruct
-    const { onBackup, cloneStyles = false, ...rest } = props;
+    const { onBackup, onEditorReady, cloneStyles = false, ...rest } = props;
 
     return (
       <eo-editor
@@ -55,6 +60,12 @@ export const EOEditorEx = React.forwardRef<EOEditorElement, EOEditorExProps>(
             r.addEventListener("backup", (event) => {
               const content = (event as CustomEvent).detail;
               onBackup(content);
+            });
+          }
+
+          if (onEditorReady) {
+            r.addEventListener("editorready", () => {
+              onEditorReady();
             });
           }
         }}
