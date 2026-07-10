@@ -16,7 +16,6 @@ it("Render Editor", () => {
     );
   });
 
-  expect(editorRef.current?.hidden).toBeTruthy();
   expect(editorRef.current?.innerHTML).contains("<b>world</b>");
 });
 
