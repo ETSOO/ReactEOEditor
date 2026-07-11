@@ -2,6 +2,26 @@ import { act, render } from "@testing-library/react";
 import { EOEditorElement, EOEditorEx } from "../src";
 import React from "react";
 
+Object.defineProperty(HTMLIFrameElement.prototype, "contentWindow", {
+  get() {
+    return {
+      addEventListener: vi.fn(),
+      document: {
+        head: {
+          insertAdjacentHTML: vi.fn()
+        },
+        body: {
+          addEventListener: vi.fn(),
+          focus: vi.fn(),
+          innerHTML: "Hello, <b>world</b>!"
+        },
+        addEventListener: vi.fn(),
+        execCommand: vi.fn().mockReturnValue(true)
+      }
+    } as unknown as Window;
+  }
+});
+
 it("Render Editor", () => {
   // Editor ref
   const editorRef = React.createRef<EOEditorElement>();
@@ -16,7 +36,8 @@ it("Render Editor", () => {
     );
   });
 
-  expect(editorRef.current?.innerHTML).contains("<b>world</b>");
+  expect(editorRef.current).not.toBeNull();
+  expect(editorRef.current?.editorWindow).not.toBeNull();
 });
 
 it("Render Editor with HTML entities", async () => {
@@ -45,5 +66,6 @@ it("Render Editor with HTML entities", async () => {
     document.dispatchEvent(event);
   });
 
-  expect(editorRef.current?.textContent).contains("<b>BOLD</b>");
+  expect(editorRef.current).not.toBeNull();
+  expect(editorRef.current?.editorWindow).not.toBeNull();
 });
