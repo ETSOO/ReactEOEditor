@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { EOEditorExProps } from "./EOEditorEx.js";
+import { EOEditorExProps } from "./EOEditorEx";
 
 const EOEditorExLazyLoaded = React.lazy(() => import("./EOEditorEx"));
 
