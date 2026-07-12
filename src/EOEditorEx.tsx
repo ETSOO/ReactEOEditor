@@ -34,7 +34,7 @@ declare global {
 /**
  * EOEditor React Component
  */
-export default function EOEditorEx(props: EOEditorExProps) {
+export function EOEditorEx(props: EOEditorExProps) {
   // Destruct
   const { onBackup, ref, cloneStyles = false, ...rest } = props;
 
