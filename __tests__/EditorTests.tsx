@@ -1,6 +1,6 @@
 import { act, render } from "@testing-library/react";
-import { EOEditorElement, EOEditorEx } from "../src";
 import React from "react";
+import EOEditorEx, { EOEditorElement } from "../src/EOEditorEx";
 
 Object.defineProperty(HTMLIFrameElement.prototype, "contentWindow", {
   get() {
