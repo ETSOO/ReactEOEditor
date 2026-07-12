@@ -1,17 +1,12 @@
-import { IEOEditor } from "@etsoo/editor";
+import { EOEditor, IEOEditor } from "@etsoo/editor";
 import React from "react";
-
-/**
- * EOEditor React Element
- */
-export interface EOEditorElement extends HTMLElement, IEOEditor {}
 
 /**
  * EOEditor extended props
  */
 export type EOEditorExProps = React.DetailedHTMLProps<
-  React.HTMLAttributes<EOEditorElement>,
-  EOEditorElement
+  React.HTMLAttributes<EOEditor>,
+  EOEditor
 > &
   Partial<IEOEditor> & {
     /**
@@ -22,7 +17,7 @@ export type EOEditorExProps = React.DetailedHTMLProps<
     /**
      * Ref to the EOEditor element
      */
-    ref?: React.Ref<EOEditorElement>;
+    ref?: React.Ref<EOEditor>;
   };
 
 // Element extensions
