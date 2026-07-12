@@ -1,4 +1,4 @@
-import { EOEditor, IEOEditor } from "@etsoo/editor";
+import { IEOEditor } from "@etsoo/editor";
 import React from "react";
 
 /**
@@ -18,6 +18,11 @@ export type EOEditorExProps = React.DetailedHTMLProps<
      * On backup callback
      */
     onBackup?: (content: string) => void;
+
+    /**
+     * Ref to the EOEditor element
+     */
+    ref?: React.Ref<EOEditorElement>;
   };
 
 // Element extensions
@@ -31,35 +36,30 @@ declare global {
   }
 }
 
-// Make sure import the script
-new EOEditor();
-
 /**
  * EOEditor React Component
  */
-export const EOEditorEx = React.forwardRef<EOEditorElement, EOEditorExProps>(
-  (props, ref) => {
-    // Destruct
-    const { onBackup, cloneStyles = false, ...rest } = props;
+export default function EOEditorEx(props: EOEditorExProps) {
+  // Destruct
+  const { onBackup, ref, cloneStyles = false, ...rest } = props;
 
-    return (
-      <eo-editor
-        cloneStyles={cloneStyles}
-        ref={(r) => {
-          if (r == null) return;
+  return (
+    <eo-editor
+      cloneStyles={cloneStyles}
+      ref={(r) => {
+        if (r == null) return;
 
-          if (typeof ref === "function") ref(r);
-          else if (ref) ref.current = r;
+        if (typeof ref === "function") ref(r);
+        else if (ref) ref.current = r;
 
-          if (onBackup) {
-            r.addEventListener("backup", (event) => {
-              const content = (event as CustomEvent).detail;
-              onBackup(content);
-            });
-          }
-        }}
-        {...rest}
-      />
-    );
-  }
-);
+        if (onBackup) {
+          r.addEventListener("backup", (event) => {
+            const content = (event as CustomEvent).detail;
+            onBackup(content);
+          });
+        }
+      }}
+      {...rest}
+    />
+  );
+}
