@@ -2,16 +2,11 @@ import { EOEditor, IEOEditor } from "@etsoo/editor";
 import React from "react";
 
 /**
- * EOEditor extended ref
- */
-export type EOEditorExRef = React.Ref<EOEditor>;
-
-/**
  * EOEditor extended props
  */
 export type EOEditorExProps = React.DetailedHTMLProps<
   React.HTMLAttributes<EOEditor>,
-  EOEditor
+  IEOEditor
 > &
   Partial<IEOEditor> & {
     /**
@@ -22,7 +17,7 @@ export type EOEditorExProps = React.DetailedHTMLProps<
     /**
      * Ref to the EOEditor element
      */
-    ref?: EOEditorExRef;
+    ref?: React.Ref<IEOEditor>;
   };
 
 // Element extensions
