@@ -1,15 +1,19 @@
-import { EOEditor, IEOEditor } from "@etsoo/editor";
+import { EOEditorDefine, IEOEditor } from "@etsoo/editor";
 import React from "react";
+
+/**
+ * EOEditor extended element
+ */
+export type EOEditorElement = IEOEditor & HTMLElement;
 
 /**
  * EOEditor extended props
  */
 export type EOEditorExProps = React.DetailedHTMLProps<
-  React.HTMLAttributes<EOEditor>,
-  IEOEditor
+  React.HTMLAttributes<EOEditorElement>,
+  EOEditorElement
 > &
-  React.PropsWithChildren &
-  Omit<Partial<IEOEditor>, "children"> & {
+  Omit<Partial<EOEditorElement>, "children"> & {
     /**
      * On backup callback
      */
@@ -18,7 +22,7 @@ export type EOEditorExProps = React.DetailedHTMLProps<
     /**
      * Ref to the EOEditor element
      */
-    ref?: React.Ref<IEOEditor>;
+    ref?: React.Ref<EOEditorElement>;
   };
 
 // Element extensions
@@ -31,6 +35,11 @@ declare global {
     }
   }
 }
+
+/**
+ * EOEditorDefine is called to define the custom element. It should be called before using the EOEditorEx component.
+ */
+EOEditorDefine();
 
 /**
  * EOEditor React Component
