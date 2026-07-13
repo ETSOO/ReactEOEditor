@@ -1,6 +1,7 @@
 import { act, render } from "@testing-library/react";
 import React from "react";
-import EOEditorEx, { EOEditorElement } from "../src/EOEditorEx";
+import { EOEditorEx } from "../src/EOEditorEx";
+import { IEOEditor } from "@etsoo/editor";
 
 Object.defineProperty(HTMLIFrameElement.prototype, "contentWindow", {
   get() {
@@ -24,7 +25,7 @@ Object.defineProperty(HTMLIFrameElement.prototype, "contentWindow", {
 
 it("Render Editor", () => {
   // Editor ref
-  const editorRef = React.createRef<EOEditorElement>();
+  const editorRef = React.createRef<IEOEditor>();
 
   act(() => {
     render(
@@ -42,7 +43,7 @@ it("Render Editor", () => {
 
 it("Render Editor with HTML entities", async () => {
   // Editor ref
-  const editorRef = React.createRef<EOEditorElement>();
+  const editorRef = React.createRef<IEOEditor>();
 
   act(() => {
     render(

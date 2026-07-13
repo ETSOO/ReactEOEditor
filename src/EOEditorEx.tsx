@@ -8,7 +8,8 @@ export type EOEditorExProps = React.DetailedHTMLProps<
   React.HTMLAttributes<EOEditor>,
   IEOEditor
 > &
-  Partial<IEOEditor> & {
+  React.PropsWithChildren &
+  Omit<Partial<IEOEditor>, "children"> & {
     /**
      * On backup callback
      */
