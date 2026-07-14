@@ -1,6 +1,6 @@
 {
   "name": "@etsoo/reacteditor",
-  "version": "1.0.47",
+  "version": "1.0.48",
   "description": "EOEditor React Implementation",
   "main": "lib/cjs/index.js",
   "module": "lib/mjs/index.js",
@@ -44,7 +44,7 @@
     "vitest": "^4.1.10"
   },
   "dependencies": {
-    "@etsoo/editor": "^1.0.73"
+    "@etsoo/editor": "^1.0.74"
   },
   "allowScripts": {
     "canvas@3.2.3": true
